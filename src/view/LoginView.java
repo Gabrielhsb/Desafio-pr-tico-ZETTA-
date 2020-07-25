@@ -5,17 +5,27 @@
  */
 package view;
 
+import controller.LoginController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author ghsb1
  */
 public class LoginView extends javax.swing.JFrame {
 
+    private final LoginController controller;
+
     /**
      * Creates new form LoginView
      */
     public LoginView() {
         initComponents();
+        controller = new LoginController(this);
     }
 
     /**
@@ -29,8 +39,8 @@ public class LoginView extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txtNome = new javax.swing.JTextField();
+        txtCpf = new javax.swing.JPasswordField();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
@@ -48,13 +58,13 @@ public class LoginView extends javax.swing.JFrame {
         jLabel2.setText("CPF");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtNomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 178, 28));
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 178, 29));
+        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 178, 28));
+        getContentPane().add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 178, 29));
 
         jToggleButton1.setText("Entrar");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -78,13 +88,17 @@ public class LoginView extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-       MenuView telaDeMenu = new MenuView();
-       telaDeMenu.setVisible(true);
+
+        try {
+            controller.autenticar();
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
@@ -127,13 +141,29 @@ public class LoginView extends javax.swing.JFrame {
         });
     }
 
+    public JPasswordField getTxtCpf() {
+        return txtCpf;
+    }
+
+    public void setTxtCpf(JPasswordField txtCpf) {
+        this.txtCpf = txtCpf;
+    }
+
+    public JTextField getTxtNome() {
+        return txtNome;
+    }
+
+    public void setTxtNome(JTextField txtNome) {
+        this.txtNome = txtNome;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JPasswordField txtCpf;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }

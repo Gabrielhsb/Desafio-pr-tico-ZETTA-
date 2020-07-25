@@ -17,6 +17,11 @@ public class Usuario {
     private String cargos;
     private String perfis_usuario;
 
+    public Usuario(String nome, String cpf) {
+       this.cpf = cpf;
+       this.nome = nome;
+    }
+
     public String getCpf() {
         return cpf;
     }
@@ -62,6 +67,15 @@ public class Usuario {
     }
 
     public void setPerfis_usuario(String perfis_usuario) {
+        this.perfis_usuario = perfis_usuario;
+    }
+
+    public Usuario(String cpf, String nome, String data_nascimento, String sexo, String cargos, String perfis_usuario) {
+        this.cpf = cpf;
+        this.nome = nome;
+        this.data_nascimento = data_nascimento;
+        this.sexo = sexo;
+        this.cargos = cargos;
         this.perfis_usuario = perfis_usuario;
     }
     
