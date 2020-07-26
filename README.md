@@ -26,9 +26,9 @@ Foi implementado como desafio para estágio um sistema de gerenciamento de usuá
    2.4 Após isso basta ir no arquivo conexao.java (dentro da pasta dao) e colocar seu usuário e senha cadastrado no postGreSQL;<br />
    2.5 Execute pelo netBeans.
    
-  Obs: Duvida sobre instalação do banco de dados segue video para ajudar[Link](https://www.youtube.com/watch?v=ng60lcr1jBU)
+  Obs: Duvida sobre instalação do banco de dados segue video para ajudar: [Link](https://www.youtube.com/watch?v=ng60lcr1jBU)
   
   
-  3- Manual de Utilização do Software:[Link](https://drive.google.com/file/d/1JimqF3pm8FiB3hEipoRQNDZQMNOIbTIu/view?usp=sharing)
+  3- Manual de Utilização do Software: [Link](https://drive.google.com/file/d/1JimqF3pm8FiB3hEipoRQNDZQMNOIbTIu/view?usp=sharing)
 
 
