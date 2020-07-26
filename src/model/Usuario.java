@@ -16,6 +16,24 @@ public class Usuario {
     private String sexo;
     private String cargos;
     private String perfis_usuario;
+    private String data_cadastro;
+
+    public Usuario(String cpf, String nome, String dataNascimento, String sexo, String cargo, String perfisUsuario) {
+        this.cpf = cpf;
+        this.nome = nome;
+        this.data_nascimento = data_nascimento;
+        this.sexo = sexo;
+        this.cargos = cargos;
+        this.perfis_usuario = perfis_usuario;
+    }
+
+    public String getData_cadastro() {
+        return data_cadastro;
+    }
+
+    public void setData_cadastro(String data_cadastro) {
+        this.data_cadastro = data_cadastro;
+    }
 
     public Usuario(String nome, String cpf) {
        this.cpf = cpf;
@@ -70,13 +88,14 @@ public class Usuario {
         this.perfis_usuario = perfis_usuario;
     }
 
-    public Usuario(String cpf, String nome, String data_nascimento, String sexo, String cargos, String perfis_usuario) {
+    public Usuario(String cpf, String nome, String data_nascimento, String sexo, String cargos, String perfis_usuario, String data_cadastro) {
         this.cpf = cpf;
         this.nome = nome;
         this.data_nascimento = data_nascimento;
         this.sexo = sexo;
         this.cargos = cargos;
         this.perfis_usuario = perfis_usuario;
+        this.data_cadastro = data_cadastro;
     }
     
     

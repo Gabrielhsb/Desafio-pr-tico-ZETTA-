@@ -14,13 +14,14 @@ import model.Usuario;
 import view.LoginView;
 import view.MenuView;
 
+
 /**
  *
  * @author ghsb1
  */
 public class LoginController {
     
-    private LoginView view;
+    private final LoginView view;
 
     public LoginController(LoginView view) {
         this.view = view;
@@ -29,6 +30,7 @@ public class LoginController {
     public void autenticar() throws SQLException {
         String nome = view.getTxtNome().getText();
         String cpf = view.getTxtCpf().getText();
+      
         
         Usuario usuarioAutenticar = new Usuario(nome, cpf);
         
@@ -37,8 +39,10 @@ public class LoginController {
         
        boolean existe =  usuarioDao.autenticarPorNomeECPF(usuarioAutenticar);
        if(existe){
-           MenuView telaDeMenu = new MenuView();
-          telaDeMenu.setVisible(true);
+
+            MenuView telaDeMenu = new MenuView();
+            telaDeMenu.setVisible(true);
+           
        }else {
            JOptionPane.showMessageDialog(view, "Usuario ou senha invalido!!");
        }

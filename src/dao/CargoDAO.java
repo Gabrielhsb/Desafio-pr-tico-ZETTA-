@@ -28,7 +28,7 @@ public class CargoDAO {
     public void insert(Cargo cargo) throws SQLException{
        
  
-            String sql = "Insert into cargo(nome) values = ?";
+            String sql = "Insert into cargo(nome) values (?)";
             PreparedStatement state = connection.prepareStatement(sql);
             state.setString(1,cargo.getNome());
             state.execute();
@@ -36,10 +36,12 @@ public class CargoDAO {
 
     }
     
-     public void update (Cargo cargo) throws SQLException{
-          String sql = "update cargo nome = ?";
+     public void update (String nomeNovo, String nomeAntigo) throws SQLException{
+          String sql = "update cargo set nome = ? where nome = ?";
           PreparedStatement state = connection.prepareStatement(sql);
-          state.setString(1,cargo.getNome());
+        
+           state.setString(1,nomeNovo);
+            state.setString(2,nomeAntigo);
             
             
             state.execute();

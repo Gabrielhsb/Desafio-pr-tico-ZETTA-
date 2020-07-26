@@ -43,7 +43,7 @@ public class UsuarioDAO {
     }
 
     public void update (Usuario usuario) throws SQLException{
-          String sql = "update usuario set cpf = ?, nome = ?, data_nascimento = ?, sexo = ?,cargos = ?, perfis_usuario= ? where cpf = ?";
+          String sql = "update usuario set cpf = ?, nome = ?, data_nascimento = ?, sexo = ?,cargos = ?, perfis_usuario= ?, data_cadastro = ? where cpf = ?";
           PreparedStatement state = connection.prepareStatement(sql);
             
             state.setString(1,usuario.getCpf());
@@ -52,7 +52,9 @@ public class UsuarioDAO {
             state.setString(4,usuario.getSexo());
             state.setString(5,usuario.getCargos());
             state.setString(6,usuario.getPerfis_usuario());
-            state.setString(7,usuario.getCpf());
+            state.setString(7,usuario.getData_cadastro());
+            state.setString(8,usuario.getCpf());
+             
 
             
             state.execute();

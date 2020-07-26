@@ -9,7 +9,6 @@ import controller.LoginController;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -26,6 +25,7 @@ public class LoginView extends javax.swing.JFrame {
     public LoginView() {
         initComponents();
         controller = new LoginController(this);
+       
     }
 
     /**
@@ -37,13 +37,18 @@ public class LoginView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtNome = new javax.swing.JTextField();
-        txtCpf = new javax.swing.JPasswordField();
+        txtCpf = new javax.swing.JTextField();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+
+        jLabel4.setText("jLabel4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -51,20 +56,19 @@ public class LoginView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nome");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 50, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 50, 20));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("CPF");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, -1, -1));
 
-        txtNome.addActionListener(new java.awt.event.ActionListener() {
+        txtCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeActionPerformed(evt);
+                txtCpfActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 178, 28));
-        getContentPane().add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 178, 29));
+        getContentPane().add(txtCpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 178, 28));
 
         jToggleButton1.setText("Entrar");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -72,7 +76,7 @@ public class LoginView extends javax.swing.JFrame {
                 jToggleButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 104, -1));
+        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 104, -1));
 
         jToggleButton2.setText("Cadastrar");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -80,22 +84,37 @@ public class LoginView extends javax.swing.JFrame {
                 jToggleButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 104, -1));
+        getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 320, 104, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/imgs/fundo_login.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-300, -40, 830, 570));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Login Zetta");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 130, 60));
+
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 178, 28));
+
+        jPanel2.setBackground(new java.awt.Color(44, 62, 80));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 530, 370));
+
+        jPanel1.setBackground(new java.awt.Color(190, 144, 212));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 530, 80));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeActionPerformed
+    }//GEN-LAST:event_txtCpfActionPerformed
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
 
         try {
-            controller.autenticar();
+           controller.autenticar();
         } catch (SQLException ex) {
             Logger.getLogger(LoginView.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -105,6 +124,10 @@ public class LoginView extends javax.swing.JFrame {
         CadastroView telaDeCadastro = new CadastroView();
         telaDeCadastro.setVisible(true);       
     }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,11 +164,11 @@ public class LoginView extends javax.swing.JFrame {
         });
     }
 
-    public JPasswordField getTxtCpf() {
+    public JTextField getTxtCpf() {
         return txtCpf;
     }
 
-    public void setTxtCpf(JPasswordField txtCpf) {
+    public void setTxtCpf(JTextField txtCpf) {
         this.txtCpf = txtCpf;
     }
 
@@ -161,9 +184,12 @@ public class LoginView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JPasswordField txtCpf;
+    private javax.swing.JTextField txtCpf;
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }

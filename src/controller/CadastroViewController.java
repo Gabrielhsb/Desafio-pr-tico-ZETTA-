@@ -8,7 +8,11 @@ package controller;
 import dao.Conexao;
 import dao.UsuarioDAO;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -33,8 +37,12 @@ public class CadastroViewController {
          String sexo = view.getTxtSexo().getText();
          String cargo = view.getTxtCargo().getText();
          String perfisUsuario = view.getTxtPerfilUsuario().getText();
-          
-        Usuario novoUsuario = new Usuario(cpf,nome,dataNascimento,sexo,cargo,perfisUsuario);
+         
+       Calendar hoje = Calendar.getInstance();
+        String dataCadastro = hoje.toString(); 
+         
+         
+        Usuario novoUsuario = new Usuario(cpf,nome,dataNascimento,sexo,cargo,perfisUsuario,dataCadastro);
          
              try {
                  Connection conexao =  new Conexao().getConnection();
