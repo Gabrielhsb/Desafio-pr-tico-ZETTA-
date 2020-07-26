@@ -21,8 +21,8 @@ Foi implementado como desafio para estágio um sistema de gerenciamento de usuá
    2.3- Execute o seguinte comando:
    ```bash
    psql -U **SEU USUARIO DO POSTREGES** -d empresa -1 -f **CAMINHO PARA O ARQUIVO .SQL CHAMADO EMPRESA**
-    ```
-    <br />
+   ```
+   
    2.4 Após isso basta ir no arquivo conexao.java (dentro da pasta dao) e colocar seu usuário e senha cadastrado no postGreSQL;<br />
    2.5 Execute pelo netBeans.
    
