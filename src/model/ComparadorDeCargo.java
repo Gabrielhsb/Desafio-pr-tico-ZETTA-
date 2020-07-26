@@ -1,17 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Classe utilizada para comparar dois cargos e retorna qual é maior, para poder oredenar em ordem alfabetica.
  */
 package model;
 
 import java.text.Collator;
 import java.util.Comparator;
 
-/**
- *
- * @author ghsb1
- */
+
  public class ComparadorDeCargo implements Comparator<Cargo> {
     public int compare(Cargo cargo1, Cargo cargo2){
         String nome1 = cargo1.getNome();

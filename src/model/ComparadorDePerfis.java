@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Classe utilizada para comparar dois Perfis e retorna qual é maior, para poder oredenar em ordem alfabetica.
  */
 package model;
 

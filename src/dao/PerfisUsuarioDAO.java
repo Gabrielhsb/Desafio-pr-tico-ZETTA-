@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Classe DAO referente ao PerfilUsuario, nela esta contido as funções de CRUD num banco de dados.
  */
 package dao;
 
@@ -10,13 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import model.Cargo;
 import model.PerfilUsuario;
 
-/**
- *
- * @author ghsb1
- */
 public class PerfisUsuarioDAO {
      private final Connection connection;
 
@@ -26,7 +19,6 @@ public class PerfisUsuarioDAO {
     
     public void insert(PerfilUsuario perfil) throws SQLException{
        
- 
             String sql = "Insert into perfil_usuario(nome) values = ?";
             PreparedStatement state = connection.prepareStatement(sql);
             state.setString(1,perfil.getNome());
@@ -39,18 +31,15 @@ public class PerfisUsuarioDAO {
           String sql = "update perfil_usuario nome = ?";
           PreparedStatement state = connection.prepareStatement(sql);
           state.setString(1,perfil.getNome());
-            
-            
-            state.execute();
+    
+          state.execute();
         
     }
      
      public void delete(PerfilUsuario perfil) throws SQLException{
          String sql = "delete from  perfil_usuario where nome = ? ";
           PreparedStatement state = connection.prepareStatement(sql);
-          
           state.setString(1,perfil.getNome());
-
           state.execute();
         
     
@@ -58,7 +47,6 @@ public class PerfisUsuarioDAO {
      
       private ArrayList<PerfilUsuario> pesquisa(PreparedStatement state) throws SQLException {
         ArrayList<PerfilUsuario> perfis = new ArrayList<PerfilUsuario>();
-        
         state.execute();
         ResultSet resultSet = state.getResultSet();
 

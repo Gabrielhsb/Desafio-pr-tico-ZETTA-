@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package model;
 
-/**
- *
- * @author ghsb1
- */
 public class Usuario {
     private String cpf;
     private String nome;
@@ -21,10 +13,20 @@ public class Usuario {
     public Usuario(String cpf, String nome, String dataNascimento, String sexo, String cargo, String perfisUsuario) {
         this.cpf = cpf;
         this.nome = nome;
+        this.data_nascimento = dataNascimento;
+        this.sexo = sexo;
+        this.cargos = cargo;
+        this.perfis_usuario = perfisUsuario;
+    }
+    
+    public Usuario(String cpf, String nome, String data_nascimento, String sexo, String cargos, String perfis_usuario, String data_cadastro) {
+        this.cpf = cpf;
+        this.nome = nome;
         this.data_nascimento = data_nascimento;
         this.sexo = sexo;
         this.cargos = cargos;
         this.perfis_usuario = perfis_usuario;
+        this.data_cadastro = data_cadastro;
     }
 
     public String getData_cadastro() {
@@ -88,15 +90,7 @@ public class Usuario {
         this.perfis_usuario = perfis_usuario;
     }
 
-    public Usuario(String cpf, String nome, String data_nascimento, String sexo, String cargos, String perfis_usuario, String data_cadastro) {
-        this.cpf = cpf;
-        this.nome = nome;
-        this.data_nascimento = data_nascimento;
-        this.sexo = sexo;
-        this.cargos = cargos;
-        this.perfis_usuario = perfis_usuario;
-        this.data_cadastro = data_cadastro;
-    }
+    
     
     
   

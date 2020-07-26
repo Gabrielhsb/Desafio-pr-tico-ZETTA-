@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Classe DAO referente ao usuario, nela esta contido as funções de CRUD num banco de dados.
  */
 package dao;
 
@@ -13,10 +11,6 @@ import java.util.ArrayList;
 import model.Usuario;
 
 
-/**
- *
- * @author ghsb1
- */
 public class UsuarioDAO {
     private final Connection connection;
 
@@ -25,21 +19,18 @@ public class UsuarioDAO {
     }
     
     public void insert(Usuario usuario) throws SQLException{
-            String sql = "Insert into usuario(cpf,nome,data_nascimento,sexo,cargos,perfis_usuario) values(?,?,?,?,?,?)";
+            String sql = "Insert into usuario(cpf,nome,data_nascimento,sexo,cargos,perfis_usuario,data_cadastro) values(?,?,?,?,?,?,?)";
             PreparedStatement state = connection.prepareStatement(sql);
-            
             state.setString(1,usuario.getCpf());
             state.setString(2,usuario.getNome());
             state.setString(3,usuario.getData_nascimento());
             state.setString(4,usuario.getSexo());
             state.setString(5,usuario.getCargos());
             state.setString(6,usuario.getPerfis_usuario());
+            state.setString(7,usuario.getData_cadastro());
 
-            
             state.execute();
-           
-           
-        
+
     }
 
     public void update (Usuario usuario) throws SQLException{
@@ -54,27 +45,22 @@ public class UsuarioDAO {
             state.setString(6,usuario.getPerfis_usuario());
             state.setString(7,usuario.getData_cadastro());
             state.setString(8,usuario.getCpf());
-             
 
-            
             state.execute();
         
     }
     
     public void delete(Usuario usuario) throws SQLException{
          String sql = "delete from usuario where cpf = ? ";
-          PreparedStatement state = connection.prepareStatement(sql);
-          
+          PreparedStatement state = connection.prepareStatement(sql);      
           state.setString(1,usuario.getCpf());
-
           state.execute();
         
     }
     
     public ArrayList<Usuario> selectAll() throws SQLException{
          String sql = "select * from usuario";
-         PreparedStatement state = connection.prepareStatement(sql);
-         
+         PreparedStatement state = connection.prepareStatement(sql);       
         return pesquisa(state);
     }
 
